@@ -322,6 +322,14 @@ public CustomerInfoExt findCustomerExtById(String id)
                 SerializerReadString.INSTANCE).find(id)
             != null;
     }
+    
+    public final String getCashActive() throws BasicException {
+
+        return (String) new PreparedSentence(s,
+                "SELECT MONEY FROM CLOSEDCASH WHERE 1=? AND DATEEND IS NULL ORDER BY HOSTSEQUENCE DESC LIMIT 1",
+                SerializerWriteString.INSTANCE,
+                SerializerReadString.INSTANCE).find("1");
+    }
 
     public final TicketInfo loadTicket(final int tickettype, final int ticketid) throws BasicException {
         TicketInfo ticket = (TicketInfo) new PreparedSentence(s
@@ -784,7 +792,7 @@ public CustomerInfoExt findCustomerExtById(String id)
                 "SELECT P.ID, P.REFERENCE, P.CODE, P.NAME, P.ISCOM, P.ISSCALE, P.PRICEBUY, P.PRICESELL, P.CATEGORY, P.TAXCAT, P.ATTRIBUTESET_ID, P.IMAGE, P.STOCKCOST, P.STOCKVOLUME, CASE WHEN C.PRODUCT IS NULL THEN " + s.DB.FALSE() + " ELSE " + s.DB.TRUE() + " END, C.CATORDER, P.ATTRIBUTES " +
                 "FROM PRODUCTS P LEFT OUTER JOIN PRODUCTS_CAT C ON P.ID = C.PRODUCT " +
                 "WHERE ?(QBF_FILTER) " +
-                "ORDER BY P.REFERENCE", new String[] {"P.NAME", "P.PRICEBUY", "P.PRICESELL", "P.CATEGORY", "P.CODE"})
+                "ORDER BY CAST(P.REFERENCE AS UNSIGNED)", new String[] {"P.NAME", "P.PRICEBUY", "P.PRICESELL", "P.CATEGORY", "P.CODE"})
             , new SerializerWriteBasic(new Datas[] {Datas.OBJECT, Datas.STRING, Datas.OBJECT, Datas.DOUBLE, Datas.OBJECT, Datas.DOUBLE, Datas.OBJECT, Datas.STRING, Datas.OBJECT, Datas.STRING})
             , productsRow.getSerializerRead());
     }

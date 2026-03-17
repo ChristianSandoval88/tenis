@@ -79,7 +79,7 @@ public class StockManagement extends JPanel implements JPanelView {
         m_ReasonModel.add(MovementReason.OUT_REFUND);
         m_ReasonModel.add(MovementReason.OUT_BREAK);
         m_ReasonModel.add(MovementReason.OUT_MOVEMENT);
-        m_ReasonModel.add(MovementReason.OUT_CROSSING);        
+        //m_ReasonModel.add(MovementReason.OUT_CROSSING);        
         m_jreason.setModel(m_ReasonModel);
         
         m_cat = new JCatalog(m_dlSales);
@@ -147,6 +147,13 @@ public class StockManagement extends JPanel implements JPanelView {
     }    
 
     private void addLine(ProductInfoExt oProduct, double dpor, double dprice) {
+        double inve =0.0;
+        try {
+                    inve = m_dlSales.findProductStock("0", oProduct.getID(), null);
+                } catch (BasicException ex) {
+                    Logger.getLogger(JPanelTicket.class.getName()).log(Level.SEVERE, null, ex);
+                }
+        dprice = inve;
         m_invlines.addLine(new InventoryLine(oProduct, dpor, dprice));
     }
     
@@ -379,6 +386,8 @@ public class StockManagement extends JPanel implements JPanelView {
         m_jdate = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         m_jbtndate = new javax.swing.JButton();
+        m_jLocation = new javax.swing.JComboBox();
+        jLabel8 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jNumberKeys = new com.openbravo.beans.JNumberKeys();
@@ -388,8 +397,6 @@ public class StockManagement extends JPanel implements JPanelView {
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         m_jreason = new javax.swing.JComboBox();
-        jLabel8 = new javax.swing.JLabel();
-        m_jLocation = new javax.swing.JComboBox();
         m_jDelete = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         m_jDelete1 = new javax.swing.JButton();
@@ -458,6 +465,8 @@ public class StockManagement extends JPanel implements JPanelView {
             }
         });
 
+        jLabel8.setText(AppLocal.getIntString("label.warehouse")); // NOI18N
+
         setLayout(new java.awt.BorderLayout());
 
         jPanel1.setLayout(new java.awt.BorderLayout());
@@ -515,7 +524,7 @@ public class StockManagement extends JPanel implements JPanelView {
 
         jLabel2.setText(AppLocal.getIntString("label.stockreason")); // NOI18N
         jPanel3.add(jLabel2);
-        jLabel2.setBounds(10, 10, 150, 14);
+        jLabel2.setBounds(10, 10, 150, 16);
 
         m_jreason.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -524,12 +533,6 @@ public class StockManagement extends JPanel implements JPanelView {
         });
         jPanel3.add(m_jreason);
         m_jreason.setBounds(160, 10, 200, 20);
-
-        jLabel8.setText(AppLocal.getIntString("label.warehouse")); // NOI18N
-        jPanel3.add(jLabel8);
-        jLabel8.setBounds(10, 40, 55, 14);
-        jPanel3.add(m_jLocation);
-        m_jLocation.setBounds(160, 40, 200, 20);
 
         m_jDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/locationbar_erase.png"))); // NOI18N
         m_jDelete.setFocusPainted(false);
@@ -542,11 +545,11 @@ public class StockManagement extends JPanel implements JPanelView {
             }
         });
         jPanel3.add(m_jDelete);
-        m_jDelete.setBounds(510, 70, 54, 42);
+        m_jDelete.setBounds(510, 40, 54, 42);
 
         jPanel5.setLayout(new java.awt.BorderLayout());
         jPanel3.add(jPanel5);
-        jPanel5.setBounds(10, 70, 500, 360);
+        jPanel5.setBounds(10, 40, 500, 390);
 
         m_jDelete1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/button_ok.png"))); // NOI18N
         m_jDelete1.setFocusPainted(false);
@@ -559,7 +562,7 @@ public class StockManagement extends JPanel implements JPanelView {
             }
         });
         jPanel3.add(m_jDelete1);
-        m_jDelete1.setBounds(510, 170, 54, 42);
+        m_jDelete1.setBounds(510, 140, 54, 42);
 
         m_jDelete2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search22.png"))); // NOI18N
         m_jDelete2.setFocusPainted(false);
@@ -572,7 +575,7 @@ public class StockManagement extends JPanel implements JPanelView {
             }
         });
         jPanel3.add(m_jDelete2);
-        m_jDelete2.setBounds(510, 120, 54, 42);
+        m_jDelete2.setBounds(510, 90, 54, 42);
 
         add(jPanel3, java.awt.BorderLayout.CENTER);
 
@@ -708,7 +711,7 @@ if (m_invlines.getCount() == 0) {
     private void m_jDelete2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jDelete2ActionPerformed
         ProductInfoExt prod = JProductFinder.showMessage(StockManagement.this, m_dlSales);    
         if (prod != null) {
-            String units = JOptionPane.showInputDialog("Cantidad:");
+            String units = JOptionPane.showInputDialog(this,prod.getName(),"Cantidad",JOptionPane.QUESTION_MESSAGE);
             try{
                 double d = Double.parseDouble(units);
                 incProduct(prod, d);

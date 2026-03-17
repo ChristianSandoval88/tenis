@@ -290,6 +290,7 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
             // Refresh ticket taxes
             for (TicketLineInfo line : m_oTicket.getLines()) {
                 line.setTaxInfo(taxeslogic.getTaxInfo(line.getProductTaxCategoryID(), m_oTicket.getDate(), m_oTicket.getCustomer()));
+                
             }  
         
             // The ticket name
@@ -299,6 +300,8 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
             m_ticketlines.clearTicketLines();
 
             for (int i = 0; i < m_oTicket.getLinesCount(); i++) {
+                
+                
                 m_ticketlines.addTicketLine(m_oTicket.getLine(i));
             }
             printPartialTotals();
@@ -383,6 +386,12 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
                     return;
                 }
         }*/
+            try {
+                    double inve = dlSales.findProductStock("0", oLine.getProductID(), null);
+                    oLine.setProperty("existencia", String.valueOf((int)inve));
+                } catch (BasicException ex) {
+                    Logger.getLogger(JPanelTicket.class.getName()).log(Level.SEVERE, null, ex);
+                }
             m_oTicket.addLine(oLine);            
             m_ticketlines.addTicketLine(oLine); // Pintamos la linea en la vista... 
             printPartialTotals();
@@ -860,19 +869,20 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
 
                         // Asigno los valores definitivos del ticket...
                         ticket.setUser(m_App.getAppUserView().getUser().getUserInfo()); // El usuario que lo cobra
-                        ticket.setActiveCash(m_App.getActiveCashIndex());
+                        //ticket.setActiveCash(m_App.getActiveCashIndex());
                         ticket.setDate(new Date()); // Le pongo la fecha de cobro
                         //ticket.setProperty("corte", Formats.STRING.formatValue(m_App.getActiveCashSequence()));
                         if (executeEvent(ticket, ticketext, "ticket.save") == null) {
                             try {
+                               ticket.setActiveCash(dlSales.getCashActive());
                                dlSales.saveTicket(ticket, m_App.getInventoryLocation()); 
                                 if(paymentdialog.isPrintSelected())
                                 {
                                     printTicket("Printer.Ticket", ticket, ticketext);
-                                    if(paymentdialog.getSelectedPayments().get(0).getName().equalsIgnoreCase("magcard"))
+                                    /*if(paymentdialog.getSelectedPayments().get(0).getName().equalsIgnoreCase("magcard"))
                                     {
                                         printTicket("Printer.Ticket", ticket, ticketext);
-                                    }
+                                    }*/
                                 }
                                  
                             } catch (BasicException eData) {

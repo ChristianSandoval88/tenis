@@ -44,7 +44,7 @@ public class InventoryLine {
         m_sProdID = oProduct.getID();
         m_sProdName = oProduct.getName();
         m_dMultiply = 1.0;
-        m_dPrice = oProduct.getPriceBuy();
+        m_dPrice = 0.0;
         attsetid = oProduct.getAttributeSetID();
         attsetinstid = null;
         attsetinstdesc = null;
@@ -120,7 +120,7 @@ public class InventoryLine {
         if (m_dMultiply == 1.0) {
             return "";
         } else {
-            return Formats.CURRENCY.formatValue(new Double(getPrice()));
+            return Formats.DOUBLE.formatValue(new Double(getPrice()));
         }
     }
     
@@ -129,6 +129,6 @@ public class InventoryLine {
     }
     
     public String printSubValue() {
-        return Formats.CURRENCY.formatValue(new Double(getSubValue()));
+        return Formats.DOUBLE.formatValue(new Double(getSubValue()));
     }    
 }

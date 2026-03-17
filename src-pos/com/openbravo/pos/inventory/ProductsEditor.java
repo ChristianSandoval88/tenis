@@ -1586,6 +1586,8 @@ this.m_jCant1.getDocument().addDocumentListener(dirty);
         m_jCant6 = new javax.swing.JTextField();
         m_jProd6 = new javax.swing.JTextField();
         jButton7 = new javax.swing.JButton();
+        m_jScale = new javax.swing.JCheckBox();
+        jLabel25 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         m_jRef = new javax.swing.JTextField();
@@ -1602,8 +1604,6 @@ this.m_jCant1.getDocument().addDocumentListener(dirty);
         m_jCategory = new javax.swing.JComboBox();
         jLabel8 = new javax.swing.JLabel();
         m_jInCatalog = new javax.swing.JCheckBox();
-        m_jScale = new javax.swing.JCheckBox();
-        jLabel25 = new javax.swing.JLabel();
 
         jLabel6.setText(AppLocal.getIntString("label.prodbarcode")); // NOI18N
 
@@ -1619,27 +1619,27 @@ this.m_jCant1.getDocument().addDocumentListener(dirty);
 
         jLabel9.setText(AppLocal.getIntString("label.prodstockcost")); // NOI18N
         jPanel2.add(jLabel9);
-        jLabel9.setBounds(10, 20, 150, 14);
+        jLabel9.setBounds(10, 20, 150, 16);
 
         m_jstockcost.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jPanel2.add(m_jstockcost);
-        m_jstockcost.setBounds(160, 20, 80, 20);
+        m_jstockcost.setBounds(160, 20, 80, 22);
 
         jLabel10.setText(AppLocal.getIntString("label.prodstockvol")); // NOI18N
         jPanel2.add(jLabel10);
-        jLabel10.setBounds(10, 50, 150, 14);
+        jLabel10.setBounds(10, 50, 150, 16);
 
         jLabel18.setText(AppLocal.getIntString("label.prodorder")); // NOI18N
         jPanel2.add(jLabel18);
-        jLabel18.setBounds(250, 80, 60, 14);
+        jLabel18.setBounds(250, 80, 60, 16);
 
         m_jCatalogOrder.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jPanel2.add(m_jCatalogOrder);
-        m_jCatalogOrder.setBounds(310, 80, 80, 20);
+        m_jCatalogOrder.setBounds(310, 80, 80, 22);
 
         jLabel11.setText(AppLocal.getIntString("label.prodaux")); // NOI18N
         jPanel2.add(jLabel11);
-        jLabel11.setBounds(10, 110, 150, 14);
+        jLabel11.setBounds(10, 110, 150, 16);
 
         txtAttributes.setFont(new java.awt.Font("DialogInput", 0, 12)); // NOI18N
         jScrollPane1.setViewportView(txtAttributes);
@@ -1679,23 +1679,23 @@ this.m_jCant1.getDocument().addDocumentListener(dirty);
 
         m_jRef7.setEnabled(false);
         jPanel5.add(m_jRef7);
-        m_jRef7.setBounds(50, 10, 80, 20);
+        m_jRef7.setBounds(50, 10, 80, 22);
         jPanel5.add(m_jCant7);
-        m_jCant7.setBounds(490, 10, 50, 20);
+        m_jCant7.setBounds(490, 10, 50, 22);
 
         m_jProd7.setEnabled(false);
         jPanel5.add(m_jProd7);
-        m_jProd7.setBounds(140, 10, 340, 20);
+        m_jProd7.setBounds(140, 10, 340, 22);
 
         m_jRef8.setEnabled(false);
         jPanel5.add(m_jRef8);
-        m_jRef8.setBounds(50, 50, 80, 20);
+        m_jRef8.setBounds(50, 50, 80, 22);
         jPanel5.add(m_jCant8);
-        m_jCant8.setBounds(490, 50, 50, 20);
+        m_jCant8.setBounds(490, 50, 50, 22);
 
         m_jProd8.setEnabled(false);
         jPanel5.add(m_jProd8);
-        m_jProd8.setBounds(140, 50, 340, 20);
+        m_jProd8.setBounds(140, 50, 340, 22);
 
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search.png"))); // NOI18N
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -1708,13 +1708,13 @@ this.m_jCant1.getDocument().addDocumentListener(dirty);
 
         m_jRef9.setEnabled(false);
         jPanel5.add(m_jRef9);
-        m_jRef9.setBounds(50, 90, 80, 20);
+        m_jRef9.setBounds(50, 90, 80, 22);
         jPanel5.add(m_jCant9);
-        m_jCant9.setBounds(490, 90, 50, 20);
+        m_jCant9.setBounds(490, 90, 50, 22);
 
         m_jProd9.setEnabled(false);
         jPanel5.add(m_jProd9);
-        m_jProd9.setBounds(140, 90, 340, 20);
+        m_jProd9.setBounds(140, 90, 340, 22);
 
         jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search.png"))); // NOI18N
         jButton9.addActionListener(new java.awt.event.ActionListener() {
@@ -1727,13 +1727,13 @@ this.m_jCant1.getDocument().addDocumentListener(dirty);
 
         m_jRef10.setEnabled(false);
         jPanel5.add(m_jRef10);
-        m_jRef10.setBounds(50, 130, 80, 20);
+        m_jRef10.setBounds(50, 130, 80, 22);
         jPanel5.add(m_jCant10);
-        m_jCant10.setBounds(490, 130, 50, 20);
+        m_jCant10.setBounds(490, 130, 50, 22);
 
         m_jProd10.setEnabled(false);
         jPanel5.add(m_jProd10);
-        m_jProd10.setBounds(140, 130, 340, 20);
+        m_jProd10.setBounds(140, 130, 340, 22);
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search.png"))); // NOI18N
         jButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -1746,13 +1746,13 @@ this.m_jCant1.getDocument().addDocumentListener(dirty);
 
         m_jRef11.setEnabled(false);
         jPanel5.add(m_jRef11);
-        m_jRef11.setBounds(50, 170, 80, 20);
+        m_jRef11.setBounds(50, 170, 80, 22);
         jPanel5.add(m_jCant11);
-        m_jCant11.setBounds(490, 170, 50, 20);
+        m_jCant11.setBounds(490, 170, 50, 22);
 
         m_jProd11.setEnabled(false);
         jPanel5.add(m_jProd11);
-        m_jProd11.setBounds(140, 170, 340, 20);
+        m_jProd11.setBounds(140, 170, 340, 22);
 
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search.png"))); // NOI18N
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -1765,13 +1765,13 @@ this.m_jCant1.getDocument().addDocumentListener(dirty);
 
         m_jRef12.setEnabled(false);
         jPanel5.add(m_jRef12);
-        m_jRef12.setBounds(50, 210, 80, 20);
+        m_jRef12.setBounds(50, 210, 80, 22);
         jPanel5.add(m_jCant12);
-        m_jCant12.setBounds(490, 210, 50, 20);
+        m_jCant12.setBounds(490, 210, 50, 22);
 
         m_jProd12.setEnabled(false);
         jPanel5.add(m_jProd12);
-        m_jProd12.setBounds(140, 210, 340, 20);
+        m_jProd12.setBounds(140, 210, 340, 22);
 
         jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search.png"))); // NOI18N
         jButton12.addActionListener(new java.awt.event.ActionListener() {
@@ -1795,23 +1795,23 @@ this.m_jCant1.getDocument().addDocumentListener(dirty);
 
         m_jRef13.setEnabled(false);
         jPanel6.add(m_jRef13);
-        m_jRef13.setBounds(50, 10, 80, 20);
+        m_jRef13.setBounds(50, 10, 80, 22);
         jPanel6.add(m_jCant13);
-        m_jCant13.setBounds(490, 10, 50, 20);
+        m_jCant13.setBounds(490, 10, 50, 22);
 
         m_jProd13.setEnabled(false);
         jPanel6.add(m_jProd13);
-        m_jProd13.setBounds(140, 10, 340, 20);
+        m_jProd13.setBounds(140, 10, 340, 22);
 
         m_jRef14.setEnabled(false);
         jPanel6.add(m_jRef14);
-        m_jRef14.setBounds(50, 50, 80, 20);
+        m_jRef14.setBounds(50, 50, 80, 22);
         jPanel6.add(m_jCant14);
-        m_jCant14.setBounds(490, 50, 50, 20);
+        m_jCant14.setBounds(490, 50, 50, 22);
 
         m_jProd14.setEnabled(false);
         jPanel6.add(m_jProd14);
-        m_jProd14.setBounds(140, 50, 340, 20);
+        m_jProd14.setBounds(140, 50, 340, 22);
 
         jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search.png"))); // NOI18N
         jButton14.addActionListener(new java.awt.event.ActionListener() {
@@ -1824,13 +1824,13 @@ this.m_jCant1.getDocument().addDocumentListener(dirty);
 
         m_jRef15.setEnabled(false);
         jPanel6.add(m_jRef15);
-        m_jRef15.setBounds(50, 90, 80, 20);
+        m_jRef15.setBounds(50, 90, 80, 22);
         jPanel6.add(m_jCant15);
-        m_jCant15.setBounds(490, 90, 50, 20);
+        m_jCant15.setBounds(490, 90, 50, 22);
 
         m_jProd15.setEnabled(false);
         jPanel6.add(m_jProd15);
-        m_jProd15.setBounds(140, 90, 340, 20);
+        m_jProd15.setBounds(140, 90, 340, 22);
 
         jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search.png"))); // NOI18N
         jButton15.addActionListener(new java.awt.event.ActionListener() {
@@ -1843,13 +1843,13 @@ this.m_jCant1.getDocument().addDocumentListener(dirty);
 
         m_jRef16.setEnabled(false);
         jPanel6.add(m_jRef16);
-        m_jRef16.setBounds(50, 130, 80, 20);
+        m_jRef16.setBounds(50, 130, 80, 22);
         jPanel6.add(m_jCant16);
-        m_jCant16.setBounds(490, 130, 50, 20);
+        m_jCant16.setBounds(490, 130, 50, 22);
 
         m_jProd16.setEnabled(false);
         jPanel6.add(m_jProd16);
-        m_jProd16.setBounds(140, 130, 340, 20);
+        m_jProd16.setBounds(140, 130, 340, 22);
 
         jButton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search.png"))); // NOI18N
         jButton16.addActionListener(new java.awt.event.ActionListener() {
@@ -1862,13 +1862,13 @@ this.m_jCant1.getDocument().addDocumentListener(dirty);
 
         m_jRef17.setEnabled(false);
         jPanel6.add(m_jRef17);
-        m_jRef17.setBounds(50, 170, 80, 20);
+        m_jRef17.setBounds(50, 170, 80, 22);
         jPanel6.add(m_jCant17);
-        m_jCant17.setBounds(490, 170, 50, 20);
+        m_jCant17.setBounds(490, 170, 50, 22);
 
         m_jProd17.setEnabled(false);
         jPanel6.add(m_jProd17);
-        m_jProd17.setBounds(140, 170, 340, 20);
+        m_jProd17.setBounds(140, 170, 340, 22);
 
         jButton17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search.png"))); // NOI18N
         jButton17.addActionListener(new java.awt.event.ActionListener() {
@@ -1881,13 +1881,13 @@ this.m_jCant1.getDocument().addDocumentListener(dirty);
 
         m_jRef18.setEnabled(false);
         jPanel6.add(m_jRef18);
-        m_jRef18.setBounds(50, 210, 80, 20);
+        m_jRef18.setBounds(50, 210, 80, 22);
         jPanel6.add(m_jCant18);
-        m_jCant18.setBounds(490, 210, 50, 20);
+        m_jCant18.setBounds(490, 210, 50, 22);
 
         m_jProd18.setEnabled(false);
         jPanel6.add(m_jProd18);
-        m_jProd18.setBounds(140, 210, 340, 20);
+        m_jProd18.setBounds(140, 210, 340, 22);
 
         jButton18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search.png"))); // NOI18N
         jButton18.addActionListener(new java.awt.event.ActionListener() {
@@ -1911,23 +1911,23 @@ this.m_jCant1.getDocument().addDocumentListener(dirty);
 
         m_jRef19.setEnabled(false);
         jPanel7.add(m_jRef19);
-        m_jRef19.setBounds(50, 10, 80, 20);
+        m_jRef19.setBounds(50, 10, 80, 22);
         jPanel7.add(m_jCant19);
-        m_jCant19.setBounds(490, 10, 50, 20);
+        m_jCant19.setBounds(490, 10, 50, 22);
 
         m_jProd19.setEnabled(false);
         jPanel7.add(m_jProd19);
-        m_jProd19.setBounds(140, 10, 340, 20);
+        m_jProd19.setBounds(140, 10, 340, 22);
 
         m_jRef20.setEnabled(false);
         jPanel7.add(m_jRef20);
-        m_jRef20.setBounds(50, 50, 80, 20);
+        m_jRef20.setBounds(50, 50, 80, 22);
         jPanel7.add(m_jCant20);
-        m_jCant20.setBounds(490, 50, 50, 20);
+        m_jCant20.setBounds(490, 50, 50, 22);
 
         m_jProd20.setEnabled(false);
         jPanel7.add(m_jProd20);
-        m_jProd20.setBounds(140, 50, 340, 20);
+        m_jProd20.setBounds(140, 50, 340, 22);
 
         jButton20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search.png"))); // NOI18N
         jButton20.addActionListener(new java.awt.event.ActionListener() {
@@ -1940,13 +1940,13 @@ this.m_jCant1.getDocument().addDocumentListener(dirty);
 
         m_jRef21.setEnabled(false);
         jPanel7.add(m_jRef21);
-        m_jRef21.setBounds(50, 90, 80, 20);
+        m_jRef21.setBounds(50, 90, 80, 22);
         jPanel7.add(m_jCant21);
-        m_jCant21.setBounds(490, 90, 50, 20);
+        m_jCant21.setBounds(490, 90, 50, 22);
 
         m_jProd21.setEnabled(false);
         jPanel7.add(m_jProd21);
-        m_jProd21.setBounds(140, 90, 340, 20);
+        m_jProd21.setBounds(140, 90, 340, 22);
 
         jButton21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search.png"))); // NOI18N
         jButton21.addActionListener(new java.awt.event.ActionListener() {
@@ -1959,13 +1959,13 @@ this.m_jCant1.getDocument().addDocumentListener(dirty);
 
         m_jRef22.setEnabled(false);
         jPanel7.add(m_jRef22);
-        m_jRef22.setBounds(50, 130, 80, 20);
+        m_jRef22.setBounds(50, 130, 80, 22);
         jPanel7.add(m_jCant22);
-        m_jCant22.setBounds(490, 130, 50, 20);
+        m_jCant22.setBounds(490, 130, 50, 22);
 
         m_jProd22.setEnabled(false);
         jPanel7.add(m_jProd22);
-        m_jProd22.setBounds(140, 130, 340, 20);
+        m_jProd22.setBounds(140, 130, 340, 22);
 
         jButton22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search.png"))); // NOI18N
         jButton22.addActionListener(new java.awt.event.ActionListener() {
@@ -1978,13 +1978,13 @@ this.m_jCant1.getDocument().addDocumentListener(dirty);
 
         m_jRef23.setEnabled(false);
         jPanel7.add(m_jRef23);
-        m_jRef23.setBounds(50, 170, 80, 20);
+        m_jRef23.setBounds(50, 170, 80, 22);
         jPanel7.add(m_jCant23);
-        m_jCant23.setBounds(490, 170, 50, 20);
+        m_jCant23.setBounds(490, 170, 50, 22);
 
         m_jProd23.setEnabled(false);
         jPanel7.add(m_jProd23);
-        m_jProd23.setBounds(140, 170, 340, 20);
+        m_jProd23.setBounds(140, 170, 340, 22);
 
         jButton23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search.png"))); // NOI18N
         jButton23.addActionListener(new java.awt.event.ActionListener() {
@@ -1997,13 +1997,13 @@ this.m_jCant1.getDocument().addDocumentListener(dirty);
 
         m_jRef24.setEnabled(false);
         jPanel7.add(m_jRef24);
-        m_jRef24.setBounds(50, 210, 80, 20);
+        m_jRef24.setBounds(50, 210, 80, 22);
         jPanel7.add(m_jCant24);
-        m_jCant24.setBounds(490, 210, 50, 20);
+        m_jCant24.setBounds(490, 210, 50, 22);
 
         m_jProd24.setEnabled(false);
         jPanel7.add(m_jProd24);
-        m_jProd24.setBounds(140, 210, 340, 20);
+        m_jProd24.setBounds(140, 210, 340, 22);
 
         jButton24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search.png"))); // NOI18N
         jButton24.addActionListener(new java.awt.event.ActionListener() {
@@ -2040,23 +2040,23 @@ this.m_jCant1.getDocument().addDocumentListener(dirty);
 
         m_jRef1.setEnabled(false);
         jPanel4.add(m_jRef1);
-        m_jRef1.setBounds(50, 10, 80, 20);
+        m_jRef1.setBounds(50, 10, 80, 22);
         jPanel4.add(m_jCant1);
-        m_jCant1.setBounds(490, 10, 50, 20);
+        m_jCant1.setBounds(490, 10, 50, 22);
 
         m_jProd1.setEnabled(false);
         jPanel4.add(m_jProd1);
-        m_jProd1.setBounds(140, 10, 340, 20);
+        m_jProd1.setBounds(140, 10, 340, 22);
 
         m_jRef2.setEnabled(false);
         jPanel4.add(m_jRef2);
-        m_jRef2.setBounds(50, 50, 80, 20);
+        m_jRef2.setBounds(50, 50, 80, 22);
         jPanel4.add(m_jCant2);
-        m_jCant2.setBounds(490, 50, 50, 20);
+        m_jCant2.setBounds(490, 50, 50, 22);
 
         m_jProd2.setEnabled(false);
         jPanel4.add(m_jProd2);
-        m_jProd2.setBounds(140, 50, 340, 20);
+        m_jProd2.setBounds(140, 50, 340, 22);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -2069,13 +2069,13 @@ this.m_jCant1.getDocument().addDocumentListener(dirty);
 
         m_jRef3.setEnabled(false);
         jPanel4.add(m_jRef3);
-        m_jRef3.setBounds(50, 90, 80, 20);
+        m_jRef3.setBounds(50, 90, 80, 22);
         jPanel4.add(m_jCant3);
-        m_jCant3.setBounds(490, 90, 50, 20);
+        m_jCant3.setBounds(490, 90, 50, 22);
 
         m_jProd3.setEnabled(false);
         jPanel4.add(m_jProd3);
-        m_jProd3.setBounds(140, 90, 340, 20);
+        m_jProd3.setBounds(140, 90, 340, 22);
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search.png"))); // NOI18N
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -2088,13 +2088,13 @@ this.m_jCant1.getDocument().addDocumentListener(dirty);
 
         m_jRef4.setEnabled(false);
         jPanel4.add(m_jRef4);
-        m_jRef4.setBounds(50, 130, 80, 20);
+        m_jRef4.setBounds(50, 130, 80, 22);
         jPanel4.add(m_jCant4);
-        m_jCant4.setBounds(490, 130, 50, 20);
+        m_jCant4.setBounds(490, 130, 50, 22);
 
         m_jProd4.setEnabled(false);
         jPanel4.add(m_jProd4);
-        m_jProd4.setBounds(140, 130, 340, 20);
+        m_jProd4.setBounds(140, 130, 340, 22);
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search.png"))); // NOI18N
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -2107,13 +2107,13 @@ this.m_jCant1.getDocument().addDocumentListener(dirty);
 
         m_jRef5.setEnabled(false);
         jPanel4.add(m_jRef5);
-        m_jRef5.setBounds(50, 170, 80, 20);
+        m_jRef5.setBounds(50, 170, 80, 22);
         jPanel4.add(m_jCant5);
-        m_jCant5.setBounds(490, 170, 50, 20);
+        m_jCant5.setBounds(490, 170, 50, 22);
 
         m_jProd5.setEnabled(false);
         jPanel4.add(m_jProd5);
-        m_jProd5.setBounds(140, 170, 340, 20);
+        m_jProd5.setBounds(140, 170, 340, 22);
 
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search.png"))); // NOI18N
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -2126,13 +2126,13 @@ this.m_jCant1.getDocument().addDocumentListener(dirty);
 
         m_jRef6.setEnabled(false);
         jPanel4.add(m_jRef6);
-        m_jRef6.setBounds(50, 210, 80, 20);
+        m_jRef6.setBounds(50, 210, 80, 22);
         jPanel4.add(m_jCant6);
-        m_jCant6.setBounds(490, 210, 50, 20);
+        m_jCant6.setBounds(490, 210, 50, 22);
 
         m_jProd6.setEnabled(false);
         jPanel4.add(m_jProd6);
-        m_jProd6.setBounds(140, 210, 340, 20);
+        m_jProd6.setBounds(140, 210, 340, 22);
 
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/search.png"))); // NOI18N
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -2143,19 +2143,21 @@ this.m_jCant1.getDocument().addDocumentListener(dirty);
         jPanel4.add(jButton7);
         jButton7.setBounds(10, 210, 30, 25);
 
+        jLabel25.setText("Bascula");
+
         setLayout(null);
 
         jLabel1.setText("Codigo de barras");
         add(jLabel1);
-        jLabel1.setBounds(10, 50, 110, 14);
+        jLabel1.setBounds(10, 50, 110, 16);
 
         jLabel2.setText(AppLocal.getIntString("label.prodname")); // NOI18N
         add(jLabel2);
-        jLabel2.setBounds(250, 50, 70, 14);
+        jLabel2.setBounds(250, 50, 70, 16);
         add(m_jRef);
-        m_jRef.setBounds(120, 50, 120, 20);
+        m_jRef.setBounds(120, 50, 120, 22);
         add(m_jName);
-        m_jName.setBounds(310, 50, 260, 20);
+        m_jName.setBounds(310, 50, 260, 22);
 
         m_jTitle.setFont(new java.awt.Font("SansSerif", 3, 18)); // NOI18N
         add(m_jTitle);
@@ -2165,33 +2167,33 @@ this.m_jCant1.getDocument().addDocumentListener(dirty);
 
         jLabel3.setText(AppLocal.getIntString("label.prodpricebuy")); // NOI18N
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(10, 10, 110, 14);
+        jLabel3.setBounds(10, 10, 110, 16);
 
         m_jPriceBuy.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jPanel1.add(m_jPriceBuy);
-        m_jPriceBuy.setBounds(160, 10, 80, 20);
+        m_jPriceBuy.setBounds(160, 10, 80, 22);
 
         jLabel4.setText("Precio venta");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(10, 40, 150, 14);
+        jLabel4.setBounds(10, 40, 150, 16);
 
         m_jPriceSell.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jPanel1.add(m_jPriceSell);
-        m_jPriceSell.setBounds(160, 40, 80, 20);
+        m_jPriceSell.setBounds(160, 40, 80, 22);
 
         m_jmargin.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jPanel1.add(m_jmargin);
-        m_jmargin.setBounds(250, 40, 80, 20);
+        m_jmargin.setBounds(250, 40, 80, 22);
 
         jLabel5.setText(AppLocal.getIntString("label.prodcategory")); // NOI18N
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(10, 70, 150, 14);
+        jLabel5.setBounds(10, 70, 150, 16);
         jPanel1.add(m_jCategory);
         m_jCategory.setBounds(160, 70, 170, 20);
 
         jLabel8.setText(AppLocal.getIntString("label.prodincatalog")); // NOI18N
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(10, 100, 150, 14);
+        jLabel8.setBounds(10, 100, 150, 16);
 
         m_jInCatalog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2199,13 +2201,7 @@ this.m_jCant1.getDocument().addDocumentListener(dirty);
             }
         });
         jPanel1.add(m_jInCatalog);
-        m_jInCatalog.setBounds(160, 100, 50, 21);
-        jPanel1.add(m_jScale);
-        m_jScale.setBounds(160, 130, 21, 21);
-
-        jLabel25.setText("Bascula");
-        jPanel1.add(jLabel25);
-        jLabel25.setBounds(10, 130, 90, 14);
+        m_jInCatalog.setBounds(160, 100, 50, 25);
 
         jTabbedPane1.addTab(AppLocal.getIntString("label.prodgeneral"), jPanel1); // NOI18N
 

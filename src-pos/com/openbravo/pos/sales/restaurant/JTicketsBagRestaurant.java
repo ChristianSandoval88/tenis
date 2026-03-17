@@ -104,6 +104,11 @@ public class JTicketsBagRestaurant extends javax.swing.JPanel {
 
     private void m_jDelTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jDelTicketActionPerformed
 
+        if(!m_App.getAppUserView().getUser().hasPermission("borrarTicket"))
+        {
+            JOptionPane.showMessageDialog(this,"No cuentas con permisos para borrar tickets.");
+            return;
+        }
         int res = JOptionPane.showConfirmDialog(this, AppLocal.getIntString("message.wannadelete"), AppLocal.getIntString("title.editor"), JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (res == JOptionPane.YES_OPTION) {
             m_restaurant.deleteTicket();

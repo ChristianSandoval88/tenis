@@ -109,11 +109,12 @@ public class DataLogicCustomers extends BeanFactoryDataSingle {
     public int updateCustomerExt(final CustomerInfoExt customer) throws BasicException {
      
         return new PreparedSentence(s
-                , "UPDATE CUSTOMERS SET NOTES = ? WHERE ID = ?"
+                , "UPDATE CUSTOMERS SET NOTES = ?, ADDRESS2=? WHERE ID = ?"
                 , SerializerWriteParams.INSTANCE      
                 ).exec(new DataParams() { public void writeValues() throws BasicException {
                         setString(1, customer.getNotes());
-                        setString(2, customer.getId());
+                        setString(2, customer.getAddress2());
+                        setString(3, customer.getId());
                 }});        
     }
     

@@ -51,7 +51,7 @@ public class JInventoryLines extends javax.swing.JPanel {
         DefaultTableColumnModel columns = new DefaultTableColumnModel();
         TableColumn c;
         
-        c = new TableColumn(0, 200
+        c = new TableColumn(0, 300
                 , new DataCellRenderer(javax.swing.SwingConstants.LEFT)
                 , new DefaultCellEditor(new JTextField()));
         c.setHeaderValue(AppLocal.getIntString("label.item"));
@@ -64,7 +64,7 @@ public class JInventoryLines extends javax.swing.JPanel {
         c = new TableColumn(2, 75
                 , new DataCellRenderer(javax.swing.SwingConstants.RIGHT)
                 , new DefaultCellEditor(new JTextField()));
-        c.setHeaderValue(AppLocal.getIntString("label.price"));
+        c.setHeaderValue(AppLocal.getIntString("Menu.Inventory2"));
         columns.addColumn(c);
         
         m_tableinventory.setColumnModel(columns);       
@@ -186,12 +186,9 @@ public class JInventoryLines extends javax.swing.JPanel {
             
             InventoryLine i = m_rows.get(row);
             switch (column) {
-                case 0: return "<html>" + i.getProductName() + (
-                        i.getProductAttSetInstDesc() == null
-                        ? ""
-                        : "<br>" + i.getProductAttSetInstDesc());
+                case 0: return i.getProductName();
                 case 1: return "x" + Formats.DOUBLE.formatValue(i.getMultiply());
-                case 2: return Formats.CURRENCY.formatValue(i.getPrice());
+                case 2: return Formats.INT.formatValue((int)i.getPrice());
                 default: return null;
             }
 
